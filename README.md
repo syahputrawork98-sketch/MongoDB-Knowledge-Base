@@ -2,27 +2,34 @@
 
 > **"Data as Objects: Flexible, Hierarchical, and Scalable by Design."**
 
-Repositori ini adalah **Blueprint Utama (Rak 04)** dalam ekosistem *The Learning Matrix*. Fokus utamanya adalah mengeksplorasi penyimpanan data NoSQL berbasis dokumen menggunakan MongoDB, BSON format, dan Aggregation Pipeline.
+## 📖 Apa itu MongoDB? (The What)
+**MongoDB** adalah sistem basis data NoSQL berbasis dokumen (*Document Store*) paling populer di dunia. Berbeda dengan database tradisional yang menyimpan data dalam baris dan kolom yang kaku, MongoDB menyimpan data dalam dokumen fleksibel mirip JSON (disebut BSON).
+
+Dalam ekosistem *The Learning Matrix*, MongoDB mewakili paradigma **Polymorphism & Horizontal Scaling**: di mana data bisa memiliki bentuk yang berbeda-beda dalam satu koleksi yang sama, dan sistem bisa tumbuh besar dengan cara membagi beban ke banyak server (*Sharding*).
 
 ---
 
-## 🎯 Visi Arsitektural: Schema-less Flexibility (The Why)
-MongoDB menantang kekakuan tabel relasional dengan menawarkan model data polimorfik:
-1.  **Document Model**: Menyimpan data sebagai objek BSON (Binary JSON) yang bisa bersarang (nested).
-2.  **Dynamic Schema**: Memungkinkan evolusi data tanpa migrasi skema yang menyakitkan di fase awal.
-3.  **Horizontal Scalability**: Dirancang untuk tumbuh melalui *Sharding* sejak awal.
+## 🎯 Mengapa Kita Menggunakan MongoDB? (The Why)
+MongoDB menantang kekakuan tabel relasional dengan menawarkan keunggulan strategis:
+1.  **Iterasi Cepat (Agility)**: Kamu tidak perlu menunggu migrasi skema yang rumit hanya untuk menambah satu *field* baru. Sangat cocok untuk *MVP* dan *Rapid Development*.
+2.  **Mapping Alami ke Kode**: Objek di JavaScript/TypeScript/Python bisa langsung disimpan ke MongoDB tanpa perlu banyak transformasi (Object-Document Mapping).
+3.  **Data Hierarkis (JSON-like)**: Kamu bisa menyimpan data kompleks (seperti alamat di dalam user) dalam satu dokumen, alih-alih melakukan `JOIN` antar tabel yang lambat.
+4.  **Skalabilitas Masif**: Dirancang untuk menangani beban data terabyte hingga petabyte secara otomatis melalui mekanisme *Cluster*.
 
-Visi repositori ini adalah membedah **MongoDB as a Primary Data Store**:
+---
+
+## 🧭 Visi Arsitektural: MongoDB as a Primary Data Store
+Repositori ini membedah MongoDB melalui tiga lensa utama:
 1. **Developer-Centric**: Bagaimana data disimpan mirip dengan struktur objek di bahasa pemrograman.
-2. **High Performance**: Optimasi *Embedded Documents* untuk mengurangi *Round-trip* I/O.
-3. **Complex Analytics**: Pemanfaatan *Aggregation Pipeline* untuk pemrosesan data real-time.
+2. **High Performance**: Optimasi *Embedded Documents* untuk mengurangi *round-trip* I/O ke disk.
+3. **Complex Analytics**: Pemanfaatan *Aggregation Pipeline* untuk pemrosesan data real-time yang canggih.
 
 ## 🧬 Jalur Matriks: Matrix Cross-Path (The What)
 Sesuai konstitusi `00-Mapping-Road`, hub ini adalah persilangan:
 - **Sumbu-Y**: JavaScript/Python/Go (Logic Core).
 - **Sumbu-X**: RAK-02 (Server Runtime) ➡️ **RAK-04 (Storage Hub)**.
 
-Di sini kita belajar **"Bagaimana menyimpan objek kompleks tanpa harus memecahnya ke belasan tabel JOIN"**.
+Di sini kita belajar **"Bagaimana menyimpan data kompleks tanpa harus memecahnya menjadi belasan tabel yang saling mengunci"**.
 
 ---
 
